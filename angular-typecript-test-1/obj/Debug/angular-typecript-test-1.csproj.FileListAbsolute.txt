@@ -1,0 +1,96 @@
+C:\Users\harrison.nguyen\documents\visual studio 2015\Projects\angular-typecript-test\angular-typecript-test-1\bin\ApplicationInsights.config
+C:\Users\harrison.nguyen\documents\visual studio 2015\Projects\angular-typecript-test\angular-typecript-test-1\bin\roslyn\csc.exe
+C:\Users\harrison.nguyen\documents\visual studio 2015\Projects\angular-typecript-test\angular-typecript-test-1\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\harrison.nguyen\documents\visual studio 2015\Projects\angular-typecript-test\angular-typecript-test-1\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\harrison.nguyen\documents\visual studio 2015\Projects\angular-typecript-test\angular-typecript-test-1\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\harrison.nguyen\documents\visual studio 2015\Projects\angular-typecript-test\angular-typecript-test-1\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\harrison.nguyen\documents\visual studio 2015\Projects\angular-typecript-test\angular-typecript-test-1\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\harrison.nguyen\documents\visual studio 2015\Projects\angular-typecript-test\angular-typecript-test-1\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\harrison.nguyen\documents\visual studio 2015\Projects\angular-typecript-test\angular-typecript-test-1\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\harrison.nguyen\documents\visual studio 2015\Projects\angular-typecript-test\angular-typecript-test-1\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\harrison.nguyen\documents\visual studio 2015\Projects\angular-typecript-test\angular-typecript-test-1\bin\roslyn\vbc.exe
+C:\Users\harrison.nguyen\documents\visual studio 2015\Projects\angular-typecript-test\angular-typecript-test-1\bin\roslyn\VBCSCompiler.exe
+C:\Users\harrison.nguyen\documents\visual studio 2015\Projects\angular-typecript-test\angular-typecript-test-1\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\harrison.nguyen\documents\visual studio 2015\Projects\angular-typecript-test\angular-typecript-test-1\bin\angular-typecript-test-1.dll
+C:\Users\harrison.nguyen\documents\visual studio 2015\Projects\angular-typecript-test\angular-typecript-test-1\bin\angular-typecript-test-1.pdb
+C:\Users\harrison.nguyen\documents\visual studio 2015\Projects\angular-typecript-test\angular-typecript-test-1\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\harrison.nguyen\documents\visual studio 2015\Projects\angular-typecript-test\angular-typecript-test-1\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\harrison.nguyen\documents\visual studio 2015\Projects\angular-typecript-test\angular-typecript-test-1\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\harrison.nguyen\documents\visual studio 2015\Projects\angular-typecript-test\angular-typecript-test-1\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\harrison.nguyen\documents\visual studio 2015\Projects\angular-typecript-test\angular-typecript-test-1\bin\Microsoft.AI.Web.dll
+C:\Users\harrison.nguyen\documents\visual studio 2015\Projects\angular-typecript-test\angular-typecript-test-1\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\harrison.nguyen\documents\visual studio 2015\Projects\angular-typecript-test\angular-typecript-test-1\bin\Microsoft.ApplicationInsights.dll
+C:\Users\harrison.nguyen\documents\visual studio 2015\Projects\angular-typecript-test\angular-typecript-test-1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\harrison.nguyen\documents\visual studio 2015\Projects\angular-typecript-test\angular-typecript-test-1\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\harrison.nguyen\documents\visual studio 2015\Projects\angular-typecript-test\angular-typecript-test-1\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\harrison.nguyen\documents\visual studio 2015\Projects\angular-typecript-test\angular-typecript-test-1\bin\Microsoft.AI.Web.xml
+C:\Users\harrison.nguyen\documents\visual studio 2015\Projects\angular-typecript-test\angular-typecript-test-1\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\harrison.nguyen\documents\visual studio 2015\Projects\angular-typecript-test\angular-typecript-test-1\bin\Microsoft.ApplicationInsights.xml
+C:\Users\harrison.nguyen\documents\visual studio 2015\Projects\angular-typecript-test\angular-typecript-test-1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\harrison.nguyen\documents\visual studio 2015\Projects\angular-typecript-test\angular-typecript-test-1\obj\Debug\angular-typecript-test-1.dll
+C:\Users\harrison.nguyen\documents\visual studio 2015\Projects\angular-typecript-test\angular-typecript-test-1\obj\Debug\angular-typecript-test-1.pdb
+C:\Users\harrison.nguyen\documents\visual studio 2015\Projects\angular-typecript-test\angular-typecript-test-1\obj\Debug\angular-typecript-test-1.csprojResolveAssemblyReference.cache
+D:\project\harrsion-project\angular-typecript-template\angular-typecript-test-1\bin\ApplicationInsights.config
+D:\project\harrsion-project\angular-typecript-template\angular-typecript-test-1\bin\roslyn\csc.exe
+D:\project\harrsion-project\angular-typecript-template\angular-typecript-test-1\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\project\harrsion-project\angular-typecript-template\angular-typecript-test-1\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\project\harrsion-project\angular-typecript-template\angular-typecript-test-1\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\project\harrsion-project\angular-typecript-template\angular-typecript-test-1\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\project\harrsion-project\angular-typecript-template\angular-typecript-test-1\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\project\harrsion-project\angular-typecript-template\angular-typecript-test-1\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\project\harrsion-project\angular-typecript-template\angular-typecript-test-1\bin\roslyn\System.Collections.Immutable.dll
+D:\project\harrsion-project\angular-typecript-template\angular-typecript-test-1\bin\roslyn\System.Reflection.Metadata.dll
+D:\project\harrsion-project\angular-typecript-template\angular-typecript-test-1\bin\roslyn\vbc.exe
+D:\project\harrsion-project\angular-typecript-template\angular-typecript-test-1\bin\roslyn\VBCSCompiler.exe
+D:\project\harrsion-project\angular-typecript-template\angular-typecript-test-1\bin\roslyn\VBCSCompiler.exe.config
+D:\project\harrsion-project\angular-typecript-template\angular-typecript-test-1\bin\angular-typecript-test-1.dll
+D:\project\harrsion-project\angular-typecript-template\angular-typecript-test-1\bin\angular-typecript-test-1.pdb
+D:\project\harrsion-project\angular-typecript-template\angular-typecript-test-1\bin\Microsoft.AI.Agent.Intercept.dll
+D:\project\harrsion-project\angular-typecript-template\angular-typecript-test-1\bin\Microsoft.AI.DependencyCollector.dll
+D:\project\harrsion-project\angular-typecript-template\angular-typecript-test-1\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\project\harrsion-project\angular-typecript-template\angular-typecript-test-1\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\project\harrsion-project\angular-typecript-template\angular-typecript-test-1\bin\Microsoft.AI.Web.dll
+D:\project\harrsion-project\angular-typecript-template\angular-typecript-test-1\bin\Microsoft.AI.WindowsServer.dll
+D:\project\harrsion-project\angular-typecript-template\angular-typecript-test-1\bin\Microsoft.ApplicationInsights.dll
+D:\project\harrsion-project\angular-typecript-template\angular-typecript-test-1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\project\harrsion-project\angular-typecript-template\angular-typecript-test-1\bin\Microsoft.AI.DependencyCollector.xml
+D:\project\harrsion-project\angular-typecript-template\angular-typecript-test-1\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\project\harrsion-project\angular-typecript-template\angular-typecript-test-1\bin\Microsoft.AI.Web.xml
+D:\project\harrsion-project\angular-typecript-template\angular-typecript-test-1\bin\Microsoft.AI.WindowsServer.xml
+D:\project\harrsion-project\angular-typecript-template\angular-typecript-test-1\bin\Microsoft.ApplicationInsights.xml
+D:\project\harrsion-project\angular-typecript-template\angular-typecript-test-1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\project\harrsion-project\angular-typecript-template\angular-typecript-test-1\obj\Debug\angular-typecript-test-1.csprojResolveAssemblyReference.cache
+D:\project\harrsion-project\angular-typecript-template\angular-typecript-test-1\obj\Debug\angular-typecript-test-1.dll
+D:\project\harrsion-project\angular-typecript-template\angular-typecript-test-1\obj\Debug\angular-typecript-test-1.pdb
+D:\project\other-project\angular-typecript-template\angular-typecript-test-1\bin\ApplicationInsights.config
+D:\project\other-project\angular-typecript-template\angular-typecript-test-1\bin\roslyn\csc.exe
+D:\project\other-project\angular-typecript-template\angular-typecript-test-1\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\project\other-project\angular-typecript-template\angular-typecript-test-1\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\project\other-project\angular-typecript-template\angular-typecript-test-1\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\project\other-project\angular-typecript-template\angular-typecript-test-1\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\project\other-project\angular-typecript-template\angular-typecript-test-1\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\project\other-project\angular-typecript-template\angular-typecript-test-1\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\project\other-project\angular-typecript-template\angular-typecript-test-1\bin\roslyn\System.Collections.Immutable.dll
+D:\project\other-project\angular-typecript-template\angular-typecript-test-1\bin\roslyn\System.Reflection.Metadata.dll
+D:\project\other-project\angular-typecript-template\angular-typecript-test-1\bin\roslyn\vbc.exe
+D:\project\other-project\angular-typecript-template\angular-typecript-test-1\bin\roslyn\VBCSCompiler.exe
+D:\project\other-project\angular-typecript-template\angular-typecript-test-1\bin\roslyn\VBCSCompiler.exe.config
+D:\project\other-project\angular-typecript-template\angular-typecript-test-1\bin\Microsoft.AI.Agent.Intercept.dll
+D:\project\other-project\angular-typecript-template\angular-typecript-test-1\bin\Microsoft.AI.DependencyCollector.dll
+D:\project\other-project\angular-typecript-template\angular-typecript-test-1\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\project\other-project\angular-typecript-template\angular-typecript-test-1\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\project\other-project\angular-typecript-template\angular-typecript-test-1\bin\Microsoft.AI.Web.dll
+D:\project\other-project\angular-typecript-template\angular-typecript-test-1\bin\Microsoft.AI.WindowsServer.dll
+D:\project\other-project\angular-typecript-template\angular-typecript-test-1\bin\Microsoft.ApplicationInsights.dll
+D:\project\other-project\angular-typecript-template\angular-typecript-test-1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\project\other-project\angular-typecript-template\angular-typecript-test-1\bin\Microsoft.AI.DependencyCollector.xml
+D:\project\other-project\angular-typecript-template\angular-typecript-test-1\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\project\other-project\angular-typecript-template\angular-typecript-test-1\bin\Microsoft.AI.Web.xml
+D:\project\other-project\angular-typecript-template\angular-typecript-test-1\bin\Microsoft.AI.WindowsServer.xml
+D:\project\other-project\angular-typecript-template\angular-typecript-test-1\bin\Microsoft.ApplicationInsights.xml
+D:\project\other-project\angular-typecript-template\angular-typecript-test-1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\project\other-project\angular-typecript-template\angular-typecript-test-1\obj\Debug\angular-typecript-test-1.csprojResolveAssemblyReference.cache
+D:\project\other-project\angular-typecript-template\angular-typecript-test-1\bin\izi-manager-front.dll
+D:\project\other-project\angular-typecript-template\angular-typecript-test-1\bin\izi-manager-front.pdb
+D:\project\other-project\angular-typecript-template\angular-typecript-test-1\obj\Debug\izi-manager-front.dll
+D:\project\other-project\angular-typecript-template\angular-typecript-test-1\obj\Debug\izi-manager-front.pdb
