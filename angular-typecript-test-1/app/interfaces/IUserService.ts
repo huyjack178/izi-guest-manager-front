@@ -4,6 +4,10 @@
     }
 
     export interface IUser {
-        fullname: string;
+        fullname: string
+        email: string
+        phone: string
+        address: string
+        hometown: string
     }
 }

@@ -5,15 +5,29 @@
 	<meta charset="utf-8" />
 </head>
 <body>
-    <h1>Guest</h1>
+    <h5>Guest</h5>
 
     <input type="text" name="name" value="text" ng-model="name"/>
-
-    <div ng-init="guestCtrl.initialize()">
-        <ul>
-            <li ng-repeat="guest in guestCtrl.guests | filter: name ">{{guest.fullname}}</li>
-        </ul>
-    </div>
+    <table ng-init="guestCtrl.initialize()">
+        <thead>
+            <tr>
+                <th data-field="id">Full Name</th>
+                <th data-field="name">Phone</th>
+                <th data-field="price">Email</th>
+                <th data-field="price">Address</th>
+                <th data-field="price">Hometown</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="guest in guestCtrl.guests | filter: name ">
+                <td>{{guest.fullname}}</td>s
+                <td>{{guest.phone}}</td>
+                <td>{{guest.email}}</td>
+                <td>{{guest.address}}</td>
+                <td>{{guest.hometown}}</td>
+            </tr>
+        </tbody>
+    </table>
 
 </body>
 </html>

@@ -3,9 +3,22 @@
 <head>
     <title></title>
 	<meta charset="utf-8" />
+    <link rel="stylesheet" href="Content/materialize-v0.97.5/css/materialize.css"/>
 </head>
 <body>
+
+    <nav>
+        <div class="nav-wrapper blue darken-4">
+            <a href="#" class="brand-logo">iziEnglish Community</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="collapsible.html">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
     <div ng-view=""></div>
+
 
     <script src="scripts/angular.js"></script>
     <script src="scripts/angular-route.js"></script>
@@ -14,5 +27,6 @@
     <script src="app/app.module.js"></script>
     <script src="app/services/GuestService.js"></script>
     <script src="app/controllers/GuestController.js"></script>
+    <script src="Content/materialize-v0.97.5/js/materialize.js"></script>
 </body>
 </html>
