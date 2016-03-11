@@ -18,6 +18,15 @@
 
             return result
         }
+
+        addUser = (user) => {
+            var result = this.httpService.post(this.localUrl + "guests", user)
+                .then((response: any): ng.IPromise<any> => response.data)
+
+            console.log(result)
+
+            return result
+        }
     }
 
     angular.module("Application").service("Application.Services.GuestService", GuestService);

@@ -13,6 +13,12 @@ var Application;
                     console.log(result);
                     return result;
                 };
+                this.addUser = function (user) {
+                    var result = _this.httpService.post(_this.localUrl + "guests", user)
+                        .then(function (response) { return response.data; });
+                    console.log(result);
+                    return result;
+                };
                 this.httpService = $http;
             }
             GuestService.$inject = ["$http"];
@@ -22,3 +28,4 @@ var Application;
         angular.module("Application").service("Application.Services.GuestService", GuestService);
     })(Services = Application.Services || (Application.Services = {}));
 })(Application || (Application = {}));
+//# sourceMappingURL=GuestService.js.map

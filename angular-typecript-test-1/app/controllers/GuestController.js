@@ -7,7 +7,12 @@ var Application;
                 var _this = this;
                 this.initialize = function () {
                     _this._guestService.getUser().then(function (data) {
-                        _this.guests = data.message;
+                        _this.guests = data;
+                    });
+                };
+                this.addGuest = function (guest) {
+                    _this._guestService.addUser(guest).then(function (data) {
+                        console.log(data);
                     });
                 };
                 this._guestService = guestService;
@@ -19,3 +24,4 @@ var Application;
         angular.module("Application").controller("Application.Controllers.GuestController", GuestController);
     })(Controllers = Application.Controllers || (Application.Controllers = {}));
 })(Application || (Application = {}));
+//# sourceMappingURL=GuestController.js.map

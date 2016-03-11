@@ -1,32 +1,56 @@
 ﻿<!DOCTYPE html>
 <html ng-app="Application">
 <head>
-    <title></title>
-	<meta charset="utf-8" />
-    <link rel="stylesheet" href="Content/materialize-v0.97.5/css/materialize.css"/>
+    <title>IZI Management Site</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="Content/materialize-v0.97.5/css/materialize.css" />
+    <link rel="stylesheet" href="Content/css/common-style.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-
-    <nav>
-        <div class="nav-wrapper blue darken-4">
-            <a href="#" class="brand-logo">iziEnglish Community</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="collapsible.html">Login</a></li>
-            </ul>
+    <header>
+        <nav>
+            <div class="nav-wrapper fixed indigo darken-3">
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="collapsible.html">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+        <ul class="side-nav fixed">
+            <li class="indigo"><a><img src="Content/img/izi-logo.png" class="responsive-img" /></a></li>
+            <li>
+                <a href="#/guest" class="bold">
+                    <i class="small material-icons" style="vertical-align:middle">person_pin</i> Guest
+                </a>
+            </li>
+            <li>
+                <a href="#!" class="bold">
+                    <i class="small material-icons" style="vertical-align:middle">language</i> Event
+                </a>
+            </li>
+        </ul>
+    </header>
+    <main style="margin-top: 20px">
+        <div class="container" style="width: 90%">
+            <div class="row">
+                <div class="col s2"></div>
+                <div class="col s10 right">
+                    <div ng-view="" ></div>
+                </div>
+            </div>
         </div>
-    </nav>
+    </main>
 
-
-    <div ng-view=""></div>
-
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="Content/materialize-v0.97.5/js/materialize.js"></script>
 
     <script src="scripts/angular.js"></script>
     <script src="scripts/angular-route.js"></script>
-  
+
     <script src="app/app.routes.js"></script>
     <script src="app/app.module.js"></script>
     <script src="app/services/GuestService.js"></script>
     <script src="app/controllers/GuestController.js"></script>
-    <script src="Content/materialize-v0.97.5/js/materialize.js"></script>
+
 </body>
 </html>

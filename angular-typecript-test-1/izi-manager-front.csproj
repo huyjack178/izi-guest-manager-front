@@ -96,6 +96,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\common-style.css" />
+    <Content Include="Content\img\izi-logo.png" />
     <Content Include="Content\materialize-v0.97.5\css\materialize.css" />
     <Content Include="Content\materialize-v0.97.5\css\materialize.min.css" />
     <Content Include="Content\materialize-v0.97.5\font\material-design-icons\LICENSE.txt" />

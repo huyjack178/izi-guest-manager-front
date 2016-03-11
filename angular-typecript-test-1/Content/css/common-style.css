@@ -1,0 +1,13 @@
+﻿body {
+}
+
+
+table {
+    table-layout: fixed; 
+    overflow:hidden; 
+    word-wrap:break-word;
+}
+
+table tr {
+
+}
