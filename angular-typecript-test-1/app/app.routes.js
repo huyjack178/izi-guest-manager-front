@@ -16,4 +16,3 @@ var Application;
     })();
     Application.Routes = Routes;
 })(Application || (Application = {}));
-//# sourceMappingURL=app.routes.js.map

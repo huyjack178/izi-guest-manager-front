@@ -11,4 +11,3 @@ var Application;
         Models.GuestModel = GuestModel;
     })(Models = Application.Models || (Application.Models = {}));
 })(Application || (Application = {}));
-//# sourceMappingURL=IUserService.js.map
