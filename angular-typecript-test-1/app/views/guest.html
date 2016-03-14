@@ -9,8 +9,9 @@
         <div class="col s5">
             <input type="text" name="params" value="text" ng-model="params" placeholder="Search by Name or Email" />
         </div>
-        <a class="modal-trigger btn-floating btn-large waves-effect waves-light red right" href="#add-modal"><i class="material-icons">add</i></a>
+        <a class="modal-trigger btn-floating btn-large waves-effect waves-light teal darken-2 right" href="#add-modal"><i class="material-icons">add</i></a>
     </div>
+
     <table ng-init="guestCtrl.initialize()" class="striped z-depth-1">
         <thead>
             <tr>
@@ -24,7 +25,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="guest in guestCtrl.guests | filter: params">
+            <tr ng-repeat="guest in guestCtrl._guests| filter: params" ng-init="$last && guestCtrl.initModals()">
                 <td>{{$index + 1}}</td>
                 <td>{{guest.fullname}}</td>
                 <td>{{guest.phone}}</td>
@@ -32,9 +33,9 @@
                 <td>{{guest.address}}</td>
                 <td>{{guest.hometown}}</td>
                 <td>
-                    <span><a class="btn-floating blue-grey"><i class="material-icons">input</i></a></span>
+                    <span><a class="modal-trigger btn-floating blue-grey"  href="#edit-modal" ng-click="guestCtrl.openEditModalOf($index, guest)"><i class="material-icons">input</i></a></span>
                     <span><a class="btn-floating teal"><i class="material-icons">perm_identity</i></a></span>
-                    <span><a class="btn-floating red"><i class="material-icons">delete</i></a></span>
+                    <span><a class="modal-trigger btn-floating red" href="#delete-modal" ng-click="guestCtrl.openDelModalOf($index)"><i class="material-icons">delete</i></a></span>
                 </td>
             </tr>
         </tbody>
@@ -43,55 +44,119 @@
     <!-- Modal Structure -->
     <div id="add-modal" class="modal">
         <div class="modal-content lime lighten-5">
+            <h4 class="deep-orange-text darken-4 bold center">Create New Guest</h4>
+            <div class="divider"></div>
             <div class="row">
                 <form class="col s12">
                     <div class="row">
                         <div class="input-field col s8">
                             <i class="material-icons prefix">account_circle</i>
-                            <input id="fullname" type="text" class="validate" ng-model="guest.fullname">
+                            <input id="fullname" type="text" class="validate" ng-model="newGuest.fullname">
                             <label for="fullname">Full Name</label>
                         </div>
                         <div class="input-field col s4">
                             <i class="material-icons prefix">phone</i>
-                            <input id="phone" type="tel" class="validate" ng-model="guest.phone">
+                            <input id="phone" type="tel" class="validate" ng-model="newGuest.phone">
                             <label for="phone">Mobile Phone</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s8">
                             <i class="material-icons prefix">email</i>
-                            <input id="email" type="email" class="validate" ng-model="guest.email">
+                            <input id="email" type="email" class="validate" ng-model="newGuest.email">
                             <label for="email" data-error="Invalid">Email</label>
 
                         </div>
                         <div class="input-field col s4">
                             <i class="material-icons prefix">room</i>
-                            <input id="hometown" type="tel" class="validate" ng-model="guest.hometown">
+                            <input id="hometown" type="tel" class="validate" ng-model="newGuest.hometown">
                             <label for="hometown">Hometown</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="material-icons prefix">my_location</i>
-                            <input id="address" type="text" class="validate" ng-model="guest.address">
+                            <input id="address" type="text" class="validate" ng-model="newGuest.address">
                             <label for="address">Address</label>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
-        <div class="modal-footer indigo">
-            <button class="modal-action modal-close btn waves-effect waves-light teal darken-1" style="margin: 5px" ng-click="guestCtrl.addGuest(guest)">
+        <div class="modal-footer  teal darken-2">
+            <button class="modal-action modal-close btn waves-effect waves-light indigo darken-3" style="margin: 5px" ng-click="guestCtrl.addGuest(newGuest)">
                 <i class="material-icons right">send</i>Add
             </button>
-            <a href="#!" class="modal-action modal-close waves-effect waves-light btn red darken-1" style="margin: 5px">Cancle</a>
+            <a href="#!" class="modal-action modal-close waves-effect waves-light btn deep-orange darken-4" style="margin: 5px">Cancle</a>
         </div>
     </div>
-    <script>
-        $(document).ready(function () {
-            $('.modal-trigger').leanModal();
-        });
-    </script>
+
+    <div id="edit-modal" class="modal">
+        <div class="modal-content lime lighten-5">
+            <h4 class="deep-orange-text darken-4 bold center">Edit Guest</h4>
+            <div class="divider"></div>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s8">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input id="fullname" type="text" class="validate" ng-model="guestCtrl.getGuestDTO().fullname">
+                            <label class="active" for="fullname">Full Name</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <i class="material-icons prefix">phone</i>
+                            <input id="phone" type="tel" class="validate" ng-model="guestCtrl.getGuestDTO().phone">
+                            <label class="active" for="phone">Mobile Phone</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s8">
+                            <i class="material-icons prefix">email</i>
+                            <input id="email" type="email" class="validate" ng-model="guestCtrl.getGuestDTO().email">
+                            <label class="active" for="email" data-error="Invalid">Email</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <i class="material-icons prefix">room</i>
+                            <input id="hometown" type="tel" class="validate" ng-model="guestCtrl.getGuestDTO().hometown">
+                            <label class="active" for="hometown">Hometown</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">my_location</i>
+                            <input id="address" type="text" class="validate" ng-model="guestCtrl.getGuestDTO().address">
+                            <label class="active" for="address">Address</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="modal-footer  teal darken-2">
+            <button class="modal-action modal-close btn waves-effect waves-light indigo darken-3" style="margin: 5px" ng-click="guestCtrl.updateGuest(editGuest)">
+                <i class="material-icons right">send</i>Update
+            </button>
+            <a href="#!" class="modal-action modal-close waves-effect waves-light btn deep-orange darken-4" style="margin: 5px">Cancle</a>
+        </div>
+    </div>
+
+    <div id="delete-modal" class="modal">
+        <div class="modal-content">
+            <h4 class="deep-orange-text darken-4 bold center">Delete Guest</h4>
+            <div class="divider"></div>
+            <p>
+                Please enter guest's id <b class="bold">
+                    ({{guestCtrl.getCurrentGuestId()}})
+                </b>to confirm you want to permanently delete it:
+            </p>
+            <input type="text" name="params" value="text" ng-model="delModalGuestIdConfirm" class="deleteId" />
+        </div>
+        <div class="modal-footer  teal darken-2">
+            <button class="modal-action modal-close btn waves-effect waves-light indigo darken-3" style="margin: 5px" ng-click="guestCtrl.deleteGuest(delModalGuestIdConfirm)">
+                <i class="material-icons right">send</i>Add
+            </button>
+            <a href="#!" class="modal-action modal-close waves-effect waves-light btn deep-orange darken-4" style="margin: 5px">Cancle</a>
+        </div>
+    </div>
 </body>
 
 </html>

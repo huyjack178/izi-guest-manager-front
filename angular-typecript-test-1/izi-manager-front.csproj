@@ -930,6 +930,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="app\app.module.ts" />
     <TypeScriptCompile Include="app\controllers\GuestController.ts" />
+    <TypeScriptCompile Include="app\directives\Directives.ts" />
     <TypeScriptCompile Include="app\interfaces\IUserService.ts" />
     <TypeScriptCompile Include="app\app.routes.ts" />
     <TypeScriptCompile Include="app\services\GuestService.ts" />
@@ -943,6 +944,8 @@
     <TypeScriptCompile Include="scripts\typings\angularjs\angular.d.ts" />
     <TypeScriptCompile Include="scripts\typings\es6-promise\es6-promise.d.ts" />
     <TypeScriptCompile Include="scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\materialize-css\materialize-css.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\pickadate\pickadate.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
