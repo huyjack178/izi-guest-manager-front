@@ -26,13 +26,14 @@
                 if (response.status == 201) {
                     guest.id = response.data;
                     this._guests.push(this.createNew(guest));
-
                     Materialize.toast("Success! New guest is created", 4000, "green");
                 }
                 else {
                     console.log(response.status)
-                    Materialize.toast("Error!" + response.status, 4000, "red");
+                    Materialize.toast("Error! Can't add guest!", 4000, "red");
                 }
+            }).catch((error) => {
+                Materialize.toast("Error! Can't add guest", 4000, "red");
             });
         }
 
@@ -42,6 +43,13 @@
                     this._guests[this._currentGuestIndex] = guest;
                     Materialize.toast("Success! Guest is updated", 4000, "green");
                 }
+                else {
+                    console.log(response.status)
+                    Materialize.toast("Error! Can't update guest!", 4000, "red");
+                }
+
+            }).catch((error) => {
+                Materialize.toast("Error! Can't update guest", 4000, "red");
             });
         }
 
@@ -52,14 +60,19 @@
                     Materialize.toast("Success! Guest is deleted", 4000, "green");
                 }
                 else {
-                    Materialize.toast("Error!" + response.status, 4000, "red");
+                    Materialize.toast("Error! Can't delete guest!", 4000, "red");
                 }
+            }).catch((error) => {
+                Materialize.toast("Error! Can't delete guest", 4000, "red");
             });
         }
 
         public initModals = () => {
             $('.modal-trigger').leanModal({
-                complete: function () { $('.deleteId').val('') } // Callback for Modal close
+                dismissible: true,
+                complete: function () {
+                    $('.deleteId').val('');
+                } // Callback for Modal close
             });
         }
 
@@ -74,7 +87,10 @@
 
         public getCurrentGuestId = (): string => {
             if (this._currentGuestIndex > -1) {
-                return this._guests[this._currentGuestIndex].id;
+                var currentGuest = this._guests[this._currentGuestIndex]
+                if (currentGuest != null) {
+                    return currentGuest.id;
+                }
             }
         }
 

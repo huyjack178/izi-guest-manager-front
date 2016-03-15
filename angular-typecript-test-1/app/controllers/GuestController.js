@@ -20,8 +20,10 @@ var Application;
                         }
                         else {
                             console.log(response.status);
-                            Materialize.toast("Error!" + response.status, 4000, "red");
+                            Materialize.toast("Error! Can't add guest!", 4000, "red");
                         }
+                    }).catch(function (error) {
+                        Materialize.toast("Error! Can't add guest", 4000, "red");
                     });
                 };
                 this.updateGuest = function (guest) {
@@ -30,6 +32,12 @@ var Application;
                             _this._guests[_this._currentGuestIndex] = guest;
                             Materialize.toast("Success! Guest is updated", 4000, "green");
                         }
+                        else {
+                            console.log(response.status);
+                            Materialize.toast("Error! Can't update guest!", 4000, "red");
+                        }
+                    }).catch(function (error) {
+                        Materialize.toast("Error! Can't update guest", 4000, "red");
                     });
                 };
                 this.deleteGuest = function (guestId) {
@@ -39,13 +47,18 @@ var Application;
                             Materialize.toast("Success! Guest is deleted", 4000, "green");
                         }
                         else {
-                            Materialize.toast("Error!" + response.status, 4000, "red");
+                            Materialize.toast("Error! Can't delete guest!", 4000, "red");
                         }
+                    }).catch(function (error) {
+                        Materialize.toast("Error! Can't delete guest", 4000, "red");
                     });
                 };
                 this.initModals = function () {
                     $('.modal-trigger').leanModal({
-                        complete: function () { $('.deleteId').val(''); } // Callback for Modal close
+                        dismissible: true,
+                        complete: function () {
+                            $('.deleteId').val('');
+                        } // Callback for Modal close
                     });
                 };
                 this.openEditModalOf = function (index, guest) {
@@ -57,7 +70,10 @@ var Application;
                 };
                 this.getCurrentGuestId = function () {
                     if (_this._currentGuestIndex > -1) {
-                        return _this._guests[_this._currentGuestIndex].id;
+                        var currentGuest = _this._guests[_this._currentGuestIndex];
+                        if (currentGuest != null) {
+                            return currentGuest.id;
+                        }
                     }
                 };
                 this.getGuestDTO = function () {

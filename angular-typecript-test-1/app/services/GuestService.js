@@ -9,25 +9,29 @@ var Application;
                 this.localUrl = "http://localhost:8001/";
                 this.getUser = function () {
                     var result = _this.httpService.get(_this.serverUrl + "guests")
-                        .then(function (response) { return response.data; });
+                        .then(function (response) { return response.data; })
+                        .catch(function (error) { return error; });
                     console.log(result);
                     return result;
                 };
                 this.addUser = function (user) {
                     var result = _this.httpService.post(_this.serverUrl + "guests", user)
-                        .then(function (response) { return (response); });
+                        .then(function (response) { return (response); })
+                        .catch(function (error) { return error; });
                     console.log(result);
                     return result;
                 };
                 this.updateUser = function (user) {
                     var result = _this.httpService.put(_this.serverUrl + "guest" + "/" + user.id, user)
-                        .then(function (response) { return (response); });
+                        .then(function (response) { return (response); })
+                        .catch(function (error) { return error; });
                     console.log(result);
                     return result;
                 };
                 this.deleteUser = function (id) {
                     var result = _this.httpService.delete(_this.serverUrl + "guest" + "/" + id)
-                        .then(function (response) { return (response); });
+                        .then(function (response) { return (response); })
+                        .catch(function (error) { return error; });
                     console.log(result);
                     return result;
                 };

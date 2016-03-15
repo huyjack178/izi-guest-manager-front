@@ -11,7 +11,7 @@
         </div>
         <a class="modal-trigger btn-floating btn-large waves-effect waves-light teal darken-2 right" href="#add-modal"><i class="material-icons">add</i></a>
     </div>
-
+    
     <table ng-init="guestCtrl.initialize()" class="striped z-depth-1">
         <thead>
             <tr>
@@ -24,7 +24,7 @@
                 <th width="15%">Operation</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody">
             <tr ng-repeat="guest in guestCtrl._guests| filter: params" ng-init="$last && guestCtrl.initModals()">
                 <td>{{$index + 1}}</td>
                 <td>{{guest.fullname}}</td>
@@ -34,7 +34,7 @@
                 <td>{{guest.hometown}}</td>
                 <td>
                     <span><a class="modal-trigger btn-floating blue-grey"  href="#edit-modal" ng-click="guestCtrl.openEditModalOf($index, guest)"><i class="material-icons">input</i></a></span>
-                    <span><a class="btn-floating teal"><i class="material-icons">perm_identity</i></a></span>
+                    <!--<span><a class="btn-floating teal"><i class="material-icons">perm_identity</i></a></span>-->
                     <span><a class="modal-trigger btn-floating red" href="#delete-modal" ng-click="guestCtrl.openDelModalOf($index)"><i class="material-icons">delete</i></a></span>
                 </td>
             </tr>
@@ -87,7 +87,7 @@
             <button class="modal-action modal-close btn waves-effect waves-light indigo darken-3" style="margin: 5px" ng-click="guestCtrl.addGuest(newGuest)">
                 <i class="material-icons right">send</i>Add
             </button>
-            <a href="#!" class="modal-action modal-close waves-effect waves-light btn deep-orange darken-4" style="margin: 5px">Cancle</a>
+            <a class="modal-action modal-close waves-effect waves-light btn deep-orange darken-4" style="margin: 5px">Cancle</a>
         </div>
     </div>
 
@@ -135,7 +135,7 @@
             <button class="modal-action modal-close btn waves-effect waves-light indigo darken-3" style="margin: 5px" ng-click="guestCtrl.updateGuest(editGuest)">
                 <i class="material-icons right">send</i>Update
             </button>
-            <a href="#!" class="modal-action modal-close waves-effect waves-light btn deep-orange darken-4" style="margin: 5px">Cancle</a>
+            <a class="modal-action modal-close waves-effect waves-light btn deep-orange darken-4" style="margin: 5px">Cancle</a>
         </div>
     </div>
 
@@ -154,9 +154,10 @@
             <button class="modal-action modal-close btn waves-effect waves-light indigo darken-3" style="margin: 5px" ng-click="guestCtrl.deleteGuest(delModalGuestIdConfirm)">
                 <i class="material-icons right">send</i>Add
             </button>
-            <a href="#!" class="modal-action modal-close waves-effect waves-light btn deep-orange darken-4" style="margin: 5px">Cancle</a>
+            <a class="modal-action modal-close waves-effect waves-light btn deep-orange darken-4" style="margin: 5px">Cancle</a>
         </div>
     </div>
+
 </body>
 
 </html>
