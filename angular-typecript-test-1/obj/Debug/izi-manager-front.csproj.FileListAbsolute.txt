@@ -30,6 +30,7 @@ D:\project\other-project\izi-manager-front\angular-typecript-test-1\bin\Microsof
 D:\project\other-project\izi-manager-front\angular-typecript-test-1\obj\Debug\izi-manager-front.csprojResolveAssemblyReference.cache
 D:\project\other-project\izi-manager-front\angular-typecript-test-1\obj\Debug\izi-manager-front.dll
 D:\project\other-project\izi-manager-front\angular-typecript-test-1\obj\Debug\izi-manager-front.pdb
+D:\project\other-project\izi-guest-manager-front\angular-typecript-test-1\obj\Debug\izi-manager-front.csprojResolveAssemblyReference.cache
 D:\project\other-project\izi-guest-manager-front\angular-typecript-test-1\bin\ApplicationInsights.config
 D:\project\other-project\izi-guest-manager-front\angular-typecript-test-1\bin\roslyn\csc.exe
 D:\project\other-project\izi-guest-manager-front\angular-typecript-test-1\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -59,6 +60,5 @@ D:\project\other-project\izi-guest-manager-front\angular-typecript-test-1\bin\Mi
 D:\project\other-project\izi-guest-manager-front\angular-typecript-test-1\bin\Microsoft.AI.WindowsServer.xml
 D:\project\other-project\izi-guest-manager-front\angular-typecript-test-1\bin\Microsoft.ApplicationInsights.xml
 D:\project\other-project\izi-guest-manager-front\angular-typecript-test-1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\project\other-project\izi-guest-manager-front\angular-typecript-test-1\obj\Debug\izi-manager-front.csprojResolveAssemblyReference.cache
 D:\project\other-project\izi-guest-manager-front\angular-typecript-test-1\obj\Debug\izi-manager-front.dll
 D:\project\other-project\izi-guest-manager-front\angular-typecript-test-1\obj\Debug\izi-manager-front.pdb

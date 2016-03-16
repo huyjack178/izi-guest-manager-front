@@ -2,13 +2,38 @@ var Application;
 (function (Application) {
     var Controllers;
     (function (Controllers) {
+        var CommonController = (function () {
+            function CommonController() {
+            }
+            CommonController.prototype.showContent = function (content) {
+                jQuery(content).show();
+            };
+            CommonController.prototype.hideContent = function (content) {
+                jQuery(content).hide();
+            };
+            CommonController.prototype.showPreloader = function () {
+                jQuery('.preloader').show();
+            };
+            CommonController.prototype.hidePreloader = function () {
+                jQuery('.preloader').hide();
+            };
+            return CommonController;
+        })();
+        Controllers.CommonController = CommonController;
+        angular.module("Application").controller("Application.Controllers.CommonController", CommonController);
         var GuestController = (function () {
-            function GuestController(guestService, scope) {
+            function GuestController(guestService, cmnCtrl, scope) {
                 var _this = this;
                 this._currentGuestIndex = -1;
                 this.initialize = function () {
+                    jQuery('.main-content').hide();
                     _this._guestService.getUser().then(function (data) {
                         _this._guests = data;
+                    }).catch(function (error) {
+                        Materialize.toast("Error! Can't add guests!", 4000, "red");
+                    }).finally(function () {
+                        _this._cmnCtrl.showContent('.main-content');
+                        _this._cmnCtrl.hidePreloader();
                     });
                 };
                 this.addGuest = function (guest) {
@@ -81,6 +106,7 @@ var Application;
                 };
                 this._guestService = guestService;
                 this._scope = scope;
+                this._cmnCtrl = cmnCtrl;
             }
             GuestController.prototype.createNew = function (guest) {
                 var newGuest = {
@@ -93,7 +119,7 @@ var Application;
                 };
                 return newGuest;
             };
-            GuestController.$inject = ["Application.Services.GuestService", "$scope"];
+            GuestController.$inject = ["Application.Services.GuestService", "Application.Controllers.CommonController", "$scope"];
             return GuestController;
         })();
         Controllers.GuestController = GuestController;

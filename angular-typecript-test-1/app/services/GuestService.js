@@ -2,6 +2,25 @@ var Application;
 (function (Application) {
     var Services;
     (function (Services) {
+        var AuthService = (function () {
+            function AuthService($http) {
+                var _this = this;
+                this.serverUrl = "https://izi-manager-server.herokuapp.com/";
+                this.localUrl = "http://localhost:8001/";
+                this.login = function (userName, password) {
+                    var authdata = jQuery.base64.encode(userName + ':' + password);
+                    _this.httpService.defaults.headers.common['Authorization'] = 'Basic' + authdata;
+                    var result = _this.httpService.post(_this.serverUrl + "member/login", null)
+                        .then(function (response) { return response; });
+                    console.log(result);
+                    return result;
+                };
+                this.httpService = $http;
+            }
+            AuthService.$inject = ["$http"];
+            return AuthService;
+        })();
+        Services.AuthService = AuthService;
         var GuestService = (function () {
             function GuestService($http) {
                 var _this = this;
@@ -41,6 +60,8 @@ var Application;
             return GuestService;
         })();
         Services.GuestService = GuestService;
-        angular.module("Application").service("Application.Services.GuestService", GuestService);
+        angular.module("Application")
+            .service("Application.Services.GuestService", GuestService)
+            .service("Application.Services.AuthService", AuthService);
     })(Services = Application.Services || (Application.Services = {}));
 })(Application || (Application = {}));

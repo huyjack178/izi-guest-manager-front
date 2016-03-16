@@ -3,19 +3,21 @@
 <head>
     <title>IZI Management Site</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="Content/materialize/css/materialize.css"/>
+    <link rel="stylesheet" href="Content/materialize/css/materialize.css" />
     <link rel="stylesheet" href="Content/css/common-style.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <header>
-        <nav>
-            <div class="nav-wrapper fixed deep-orange darken-4 fixed">
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="collapsible.html">Login</a></li>
-                </ul>
-            </div>
-        </nav>
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper fixed deep-orange darken-4 ">
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="collapsible.html">Login{{authCtrl.test()}}</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
         <ul class="side-nav fixed">
             <li class="indigo darken-4"><a><img src="" class="responsive-img" /></a></li>
             <li>
@@ -30,12 +32,13 @@
             </li>
         </ul>
     </header>
-    <main style="margin-top: 20px">
+
+    <main>
         <div class="container" style="width: 90%">
             <div class="row">
                 <div class="col s2"></div>
                 <div class="col s10 right">
-                    <div ng-view="" ></div>
+                    <div ng-view=""></div>
                 </div>
             </div>
         </div>
@@ -49,7 +52,7 @@
 
     <script src="app/app.routes.js"></script>
     <script src="app/app.module.js"></script>
-    <script src="app/services/GuestService.js"></script>
-    <script src="app/controllers/GuestController.js"></script>
+    <script src="app/services/Services.js"></script>
+    <script src="app/controllers/Controllers.js"></script>
 </body>
 </html>

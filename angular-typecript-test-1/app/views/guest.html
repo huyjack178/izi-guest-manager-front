@@ -5,41 +5,45 @@
     <meta charset="utf-8" />
 </head>
 <body>
+     <h4 class="indigo-text darken-3">Guest Management</h4>
     <div class="row">
         <div class="col s5">
             <input type="text" name="params" value="text" ng-model="params" placeholder="Search by Name or Email" />
         </div>
         <a class="modal-trigger btn-floating btn-large waves-effect waves-light teal darken-2 right" href="#add-modal"><i class="material-icons">add</i></a>
     </div>
-    
-    <table ng-init="guestCtrl.initialize()" class="striped z-depth-1">
-        <thead>
-            <tr>
-                <th data-field="number" width="5%">#</th>
-                <th data-field="id" width="15%">Full Name</th>
-                <th data-field="name" width="15%">Phone</th>
-                <th data-field="price" width="20%">Email</th>
-                <th data-field="price" width="20%">Address</th>
-                <th data-field="price" width="10%">Hometown</th>
-                <th width="15%">Operation</th>
-            </tr>
-        </thead>
-        <tbody">
-            <tr ng-repeat="guest in guestCtrl._guests| filter: params" ng-init="$last && guestCtrl.initModals()">
-                <td>{{$index + 1}}</td>
-                <td>{{guest.fullname}}</td>
-                <td>{{guest.phone}}</td>
-                <td>{{guest.email}}</td>
-                <td>{{guest.address}}</td>
-                <td>{{guest.hometown}}</td>
-                <td>
-                    <span><a class="modal-trigger btn-floating blue-grey"  href="#edit-modal" ng-click="guestCtrl.openEditModalOf($index, guest)"><i class="material-icons">input</i></a></span>
-                    <!--<span><a class="btn-floating teal"><i class="material-icons">perm_identity</i></a></span>-->
-                    <span><a class="modal-trigger btn-floating red" href="#delete-modal" ng-click="guestCtrl.openDelModalOf($index)"><i class="material-icons">delete</i></a></span>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="main-content">
+        <div class="table-wrap">
+            <table ng-init="guestCtrl.initialize()" class="main-table striped z-depth-1">
+                <thead>
+                    <tr>
+                        <th data-field="number" width="5%">#</th>
+                        <th data-field="id" width="15%">Full Name</th>
+                        <th data-field="name" width="15%">Phone</th>
+                        <th data-field="price" width="20%">Email</th>
+                        <th data-field="price" width="20%">Address</th>
+                        <th data-field="price" width="10%">Hometown</th>
+                        <th width="15%">Operation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="guest in guestCtrl._guests| filter: params" ng-init="$last && guestCtrl.initModals()">
+                        <td>{{$index + 1}}</td>
+                        <td>{{guest.fullname}}</td>
+                        <td>{{guest.phone}}</td>
+                        <td>{{guest.email}}</td>
+                        <td>{{guest.address}}</td>
+                        <td>{{guest.hometown}}</td>
+                        <td>
+                            <span><a class="modal-trigger btn-floating blue-grey" href="#edit-modal" ng-click="guestCtrl.openEditModalOf($index, guest)"><i class="material-icons">input</i></a></span>
+                            <!--<span><a class="btn-floating teal"><i class="material-icons">perm_identity</i></a></span>-->
+                            <span><a class="modal-trigger btn-floating red" href="#delete-modal" ng-click="guestCtrl.openDelModalOf($index)"><i class="material-icons">delete</i></a></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
     <!-- Modal Structure -->
     <div id="add-modal" class="modal">
@@ -132,7 +136,7 @@
             </div>
         </div>
         <div class="modal-footer  teal darken-2">
-            <button class="modal-action modal-close btn waves-effect waves-light indigo darken-3" style="margin: 5px" ng-click="guestCtrl.updateGuest(editGuest)">
+            <button class="modal-action modal-close btn waves-effect waves-light indigo darken-3" style="margin: 5px" ng-click="guestCtrl.updateGuest(guestCtrl.getGuestDTO())">
                 <i class="material-icons right">send</i>Update
             </button>
             <a class="modal-action modal-close waves-effect waves-light btn deep-orange darken-4" style="margin: 5px">Cancle</a>
@@ -158,6 +162,20 @@
         </div>
     </div>
 
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-red-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                    <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
