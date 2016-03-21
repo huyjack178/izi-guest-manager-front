@@ -39,6 +39,7 @@
             if (this._authService.getCookies("member") == "") {
                 window.location.href = window.location.pathname + "#/login";
             }
+            
 
         }
 
@@ -187,9 +188,14 @@
                     if (response.status == 200) {
                         this._authService.setCookies("member", response.data, 60);
                         window.location.href = window.location.pathname + "#/guest";
+                        jQuery(".userName").text(userName);
                     }
                     console.log(response)
                 })
+        }
+
+        public logout = () => {
+            this._authService.logout()
         }
 
         public test = () => {

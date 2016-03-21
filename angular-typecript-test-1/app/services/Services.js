@@ -21,7 +21,6 @@ var Application;
                 };
                 this.logout = function () {
                     document.cookie = null;
-                    window.location.href = window.location.pathname + "#/login";
                 };
                 this.setCookies = function (cookieName, authData, exdays) {
                     var date = new Date();

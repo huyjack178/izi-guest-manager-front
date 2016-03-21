@@ -11,9 +11,9 @@
                 controller: "Application.Controllers.AuthController",
                 templateUrl: "app/views/login.html",
                 controllerAs: "authCtrl"
-            }).when("/", {
+            }).when("/logout", {
                 controller: "Application.Controllers.AuthController",
-                templateUrl: "index.html",
+                templateUrl: "app/views/login.html",
                 controllerAs: "authCtrl"
             });
 

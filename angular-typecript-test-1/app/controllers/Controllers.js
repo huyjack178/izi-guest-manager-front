@@ -152,9 +152,13 @@ var Application;
                         if (response.status == 200) {
                             _this._authService.setCookies("member", response.data, 60);
                             window.location.href = window.location.pathname + "#/guest";
+                            jQuery(".userName").text(userName);
                         }
                         console.log(response);
                     });
+                };
+                this.logout = function () {
+                    _this._authService.logout();
                 };
                 this.test = function () {
                     console.log("test");

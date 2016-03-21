@@ -28,7 +28,6 @@
 
         logout = () => {
             document.cookie = null;
-            window.location.href = window.location.pathname + "#/login";
         }
 
         setCookies = (cookieName: string, authData: any, exdays: number) => {
