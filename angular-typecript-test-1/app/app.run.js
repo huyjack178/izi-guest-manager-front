@@ -3,12 +3,14 @@ var Application;
     var Run = (function () {
         function Run() {
         }
-        Run.run = function ($rootScope, $location) {
+        Run.run = function ($rootScope, $location, $cookie) {
             $rootScope.$on('$locationChangeStart', function (event, next, current) {
-                $location.path('/login');
+                var cookie = $cookie.get("member");
+                if (cookie == null)
+                    $location.path('/login');
             });
         };
-        Run.$inject = ['$rootScope', '$location'];
+        Run.$inject = ['$rootScope', '$location', '$cookiesProvider'];
         return Run;
     })();
     Application.Run = Run;
