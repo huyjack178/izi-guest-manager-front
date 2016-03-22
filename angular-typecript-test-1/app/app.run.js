@@ -3,8 +3,12 @@ var Application;
     var Run = (function () {
         function Run() {
         }
+        Run.run = function ($rootScope, $location) {
+            $rootScope.$on('$locationChangeStart', function (event, next, current) {
+                $location.path('/login');
+            });
+        };
         return Run;
     })();
     Application.Run = Run;
 })(Application || (Application = {}));
-//# sourceMappingURL=app.run.js.map

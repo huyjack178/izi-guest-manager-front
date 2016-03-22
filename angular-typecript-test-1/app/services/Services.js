@@ -88,4 +88,3 @@ var Application;
             .service("Application.Services.AuthService", AuthService);
     })(Services = Application.Services || (Application.Services = {}));
 })(Application || (Application = {}));
-//# sourceMappingURL=Services.js.map
