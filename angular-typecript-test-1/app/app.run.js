@@ -8,6 +8,7 @@ var Application;
                 $location.path('/login');
             });
         };
+        Run.$inject = ['$rootScope', '$location'];
         return Run;
     })();
     Application.Run = Run;

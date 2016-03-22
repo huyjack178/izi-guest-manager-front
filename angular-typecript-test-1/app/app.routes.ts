@@ -1,6 +1,6 @@
 ﻿module Application {
     export class Routes {
-        static $inject = ["$routeProvider", '$rootScope', '$location'];
+        static $inject = ["$routeProvider"];
         static configureRoutes($routeProvider: ng.route.IRouteProvider) {
             $routeProvider
                 .when("/guest", {

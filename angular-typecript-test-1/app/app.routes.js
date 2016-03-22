@@ -20,7 +20,7 @@ var Application;
             });
             $routeProvider.otherwise({ redirectTo: "/login" });
         };
-        Routes.$inject = ["$routeProvider", '$rootScope', '$location'];
+        Routes.$inject = ["$routeProvider"];
         return Routes;
     })();
     Application.Routes = Routes;
