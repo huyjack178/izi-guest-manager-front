@@ -13,7 +13,7 @@
             <nav>
                 <div class="nav-wrapper fixed deep-orange darken-4 ">
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li> <a href="#/logout"><span class="userName"></span> Logout</a></li>
+                        <li> <a href="#/logout"><span class="userName"></span>Logout</a></li>
                     </ul>
                 </div>
             </nav>
@@ -55,6 +55,14 @@
     <script src="app/services/Services.js"></script>
     <script src="app/controllers/Controllers.js"></script>
     <script>
+        function showHeader(isShow) {
+            if (isShow)
+                jQuery("header").show()
+            else
+                jQuery("header").hide();
+        }
+    </script>
+    <!--<script>
         function getCookie(cookieName) {
             var name = cookieName + "=";
             var ca = document.cookie.split(';');
@@ -75,6 +83,6 @@
         }
 
         
-    </script>
+    </script>-->
 </body>
 </html>

@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html >
+<html ng-app="Application">
 <head>
     <title></title>
 	<meta charset="utf-8" />
@@ -7,12 +7,9 @@
  
 </head>
 <body>
-    
     <input type="text" name="params" value="username" ng-model="username" placeholder="Username"/>
     <input type="password" name="params" value="password" ng-model="password" placeholder="Password" />
     <button class="btn-flat indigo white-text" ng-click="authCtrl.login(username, password)">Login</button>
-
-   
 </body>
 
 </html>

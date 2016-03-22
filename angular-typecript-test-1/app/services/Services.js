@@ -6,7 +6,6 @@ var Application;
             function AuthService($http) {
                 var _this = this;
                 this.serverUrl = "https://izi-manager-server.herokuapp.com/";
-                this.localUrl = "http://localhost:8001/";
                 this.login = function (userName, password) {
                     var authData = btoa(userName + ':' + password);
                     var config = {
@@ -14,7 +13,7 @@ var Application;
                             "Authorization": "Basic " + authData
                         }
                     };
-                    var result = _this.httpService.post(_this.localUrl + "member/login", null, config)
+                    var result = _this.httpService.post(_this.serverUrl + "member/login", null, config)
                         .then(function (response) { return response; });
                     console.log(result);
                     return result;
@@ -50,7 +49,6 @@ var Application;
             function GuestService($http) {
                 var _this = this;
                 this.serverUrl = "https://izi-manager-server.herokuapp.com/";
-                this.localUrl = "http://localhost:8001/";
                 this.getUser = function () {
                     var result = _this.httpService.get(_this.serverUrl + "guests")
                         .then(function (response) { return response.data; })
@@ -90,3 +88,4 @@ var Application;
             .service("Application.Services.AuthService", AuthService);
     })(Services = Application.Services || (Application.Services = {}));
 })(Application || (Application = {}));
+//# sourceMappingURL=Services.js.map

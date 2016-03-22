@@ -152,7 +152,6 @@ var Application;
                         if (response.status == 200) {
                             _this._authService.setCookies("member", response.data, 60);
                             window.location.href = window.location.pathname + "#/guest";
-                            jQuery(".userName").text(userName);
                         }
                         console.log(response);
                     });
@@ -176,3 +175,4 @@ var Application;
             .controller("Application.Controllers.AuthController", AuthController);
     })(Controllers = Application.Controllers || (Application.Controllers = {}));
 })(Application || (Application = {}));
+//# sourceMappingURL=Controllers.js.map

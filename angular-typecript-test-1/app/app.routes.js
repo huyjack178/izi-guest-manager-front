@@ -20,8 +20,14 @@ var Application;
             });
             $routeProvider.otherwise({ redirectTo: "/login" });
         };
-        Routes.$inject = ["$routeProvider"];
+        Routes.run = function ($rootScope, $location) {
+            $rootScope.$on('$locationChangeStart', function (event, next, current) {
+                $location.path('/login');
+            });
+        };
+        Routes.$inject = ["$routeProvider", '$rootScope', '$location'];
         return Routes;
     })();
     Application.Routes = Routes;
 })(Application || (Application = {}));
+//# sourceMappingURL=app.routes.js.map

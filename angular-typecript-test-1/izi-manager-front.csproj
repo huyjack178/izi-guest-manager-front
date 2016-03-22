@@ -931,6 +931,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app\app.module.ts" />
+    <TypeScriptCompile Include="app\app.run.ts" />
     <TypeScriptCompile Include="app\controllers\Controllers.ts" />
     <TypeScriptCompile Include="app\directives\Directives.ts" />
     <TypeScriptCompile Include="app\interfaces\Interfaces.ts" />

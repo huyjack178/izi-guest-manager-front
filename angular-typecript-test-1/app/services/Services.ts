@@ -1,7 +1,7 @@
 ﻿module Application.Services {
     export class AuthService implements Application.Interfaces.IAuthService {
         serverUrl: string = "https://izi-manager-server.herokuapp.com/"
-        localUrl: string = "http://localhost:8001/"
+        //serverUrl: string = "http://localhost:8001/"
 
         httpService: ng.IHttpService
         static $inject = ["$http"];
@@ -19,9 +19,9 @@
                     "Authorization": "Basic " + authData
                 }
             }
-            var result = this.httpService.post(this.localUrl + "member/login", null, config)
+            var result = this.httpService.post(this.serverUrl + "member/login", null, config)
                 .then((response: any): ng.IPromise<any> => response);
-
+           
             console.log(result);
             return result;
         }
@@ -51,7 +51,7 @@
 
     export class GuestService implements Application.Interfaces.IUserService {
         serverUrl: string = "https://izi-manager-server.herokuapp.com/"
-        localUrl: string = "http://localhost:8001/"
+        //serverUrl: string = "http://localhost:8001/"
 
         httpService: ng.IHttpService
         static $inject = ["$http"];
