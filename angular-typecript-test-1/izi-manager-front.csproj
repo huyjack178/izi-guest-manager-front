@@ -939,7 +939,6 @@
     <TypeScriptCompile Include="app\app.run.ts" />
     <TypeScriptCompile Include="app\constants\Constants.ts" />
     <TypeScriptCompile Include="app\controllers\Controllers.ts" />
-    <TypeScriptCompile Include="app\directives\Directives.ts" />
     <TypeScriptCompile Include="app\interfaces\Interfaces.ts" />
     <TypeScriptCompile Include="app\app.routes.ts" />
     <TypeScriptCompile Include="app\services\Services.ts" />

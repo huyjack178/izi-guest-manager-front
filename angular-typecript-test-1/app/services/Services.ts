@@ -43,21 +43,36 @@
         getCookies = (cookieName: string): string => {
             return this.cookiesService.get(cookieName);
         }
+
+        getAuthDataConfig = (): ng.IRequestShortcutConfig => {
+            var authData = this.getCookies(Constants.COOKIE_NAME);
+
+            var config: ng.IRequestShortcutConfig = {
+                headers: {
+                    "Authorization": authData
+                }
+            };
+
+            return config;
+        }
     }
 
     export class GuestService implements Application.Interfaces.IUserService {
         serverUrl: string = "https://izi-manager-server.herokuapp.com/"
         //serverUrl: string = "http://localhost:8001/"
 
-        httpService: ng.IHttpService
-        static $inject = ["$http"];
+        httpService: ng.IHttpService;
+        authService: Application.Interfaces.IAuthService;
 
-        constructor($http: ng.IHttpService) {
+        static $inject = ["$http", "Application.Services.AuthService"];
+
+        constructor($http: ng.IHttpService, authService: Application.Services.AuthService) {
             this.httpService = $http;
+            this.authService = authService;
         }
 
         getUser = () => {
-            var result = this.httpService.get(this.serverUrl + "guests")
+            var result = this.httpService.get(this.serverUrl + "guests", this.authService.getAuthDataConfig())
                 .then((response: any): ng.IPromise<any> => response.data)
                 .catch((error: any): ng.IPromise<any> => error);
 
@@ -67,7 +82,7 @@
         }
 
         addUser = (user: Interfaces.IUser) => {
-            var result = this.httpService.post(this.serverUrl + "guests", user)
+            var result = this.httpService.post(this.serverUrl + "guests", user, this.authService.getAuthDataConfig())
                 .then((response: any): ng.IPromise<any> => (response))
                 .catch((error: any): ng.IPromise<any> => error);
 
@@ -77,7 +92,7 @@
         }
 
         updateUser = (user: Interfaces.IUser) => {
-            var result = this.httpService.put(this.serverUrl + "guest" + "/" + user.id, user)
+            var result = this.httpService.put(this.serverUrl + "guest" + "/" + user.id, user, this.authService.getAuthDataConfig())
                 .then((response: any): ng.IPromise<any> => (response))
                 .catch((error: any): ng.IPromise<any> => error);
 
@@ -87,7 +102,7 @@
         }
 
         deleteUser = (id: string) => {
-            var result = this.httpService.delete(this.serverUrl + "guest" + "/" + id)
+            var result = this.httpService.delete(this.serverUrl + "guest" + "/" + id, this.authService.getAuthDataConfig())
                 .then((response: any): ng.IPromise<any> => (response))
                 .catch((error: any): ng.IPromise<any> => error);
 

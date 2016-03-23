@@ -7,6 +7,8 @@
         setCookies: (cookieName: string, data: any, exdays: number) => any
 
         getCookies: (cookieName: string) => string
+
+        getAuthDataConfig: () => ng.IRequestShortcutConfig
     }
 
     export interface IUserService {
