@@ -1,4 +1,5 @@
 ﻿module Application.Controllers {
+
     export class CommonController {
         constructor() { }
 
@@ -35,10 +36,6 @@
             this._guestService = guestService;
             this._scope = scope;
             this._cmnCtrl = new CommonController();
-
-            if (this._authService.getCookies("member") == "") {
-                window.location.href = window.location.pathname + "#/login";
-            }
         }
 
         _guests: Array<Application.Interfaces.IUser>;
@@ -173,30 +170,47 @@
     export class AuthController {
         _authService: Application.Interfaces.IAuthService;
         _scope: ng.IScope;
+        _location: ng.ILocationService;
+        _cmnCtrl: Application.Controllers.CommonController
 
-        static $inject = ["Application.Services.AuthService", "$scope"];
-        constructor(authService: Application.Interfaces.IAuthService, scope: ng.IScope) {
+        static $inject = ["Application.Services.AuthService", "$scope", "$location"];
+        constructor(authService: Application.Interfaces.IAuthService
+            , scope: ng.IScope
+            , location: ng.ILocationService) {
             this._authService = authService;
             this._scope = scope;
+            this._location = location;
+            this._cmnCtrl = new CommonController();
+            this._cmnCtrl.hidePreloader();
         }
 
         public login = (userName: string, password: string) => {
+            this._cmnCtrl.showPreloader();
+
             this._authService.login(userName, password)
                 .then((response: any) => {
                     if (response.status == 200) {
-                        this._authService.setCookies("member", response.data, 60);
-                        window.location.href = window.location.pathname + "#/guest";
+                        this._authService.setCookies(Constants.COOKIE_NAME, response.data, 60);
+                        this._authService.setCookies(Constants.COOKIE_USERNAME, userName, 60);
+                        this._location.path("/guest");
                     }
-                    console.log(response)
-                })
+                    else {
+                        Materialize.toast("Wrong UserName or Password", 4000, "red rounded");
+                    }
+                }).catch((error: any) => {
+                    Materialize.toast("Wrong UserName or Password", 4000, "red rounded");
+                }).finally(() => {
+                    this._cmnCtrl.hidePreloader();
+                });
         }
 
         public logout = () => {
             this._authService.logout()
+            this._location.path("/login")
         }
 
-        public test = () => {
-            console.log("test")
+        public getUserName = (): string => {
+            return this._authService.getCookies(Constants.COOKIE_USERNAME);
         }
     }
 

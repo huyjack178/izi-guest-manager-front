@@ -4,10 +4,13 @@
         //serverUrl: string = "http://localhost:8001/"
 
         httpService: ng.IHttpService
-        static $inject = ["$http"];
+        cookiesService: ng.cookies.ICookiesService;
 
-        constructor($http: ng.IHttpService) {
+        static $inject = ["$http", "$cookies"];
+
+        constructor($http: ng.IHttpService, $cookies: ng.cookies.ICookiesService) {
             this.httpService = $http;
+            this.cookiesService = $cookies;
         }
 
         login = (userName: string, password: string) => {
@@ -21,31 +24,24 @@
             }
             var result = this.httpService.post(this.serverUrl + "member/login", null, config)
                 .then((response: any): ng.IPromise<any> => response);
-           
+
             console.log(result);
             return result;
         }
 
         logout = () => {
-            document.cookie = null;
+            this.cookiesService.remove(Application.Constants.COOKIE_NAME);
         }
 
         setCookies = (cookieName: string, authData: any, exdays: number) => {
-            var date = new Date();
-            date.setTime(date.getTime() + (exdays * 24 * 60 * 1000));
-            var expires = "expires=" + date.toUTCString();
-            document.cookie = cookieName + "=" + authData + ";" + expires;
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+
+            this.cookiesService.put(cookieName, authData, { expires: d.toUTCString() });
         }
 
         getCookies = (cookieName: string): string => {
-            var name = cookieName + "=";
-            var ca = document.cookie.split(';');
-            for (var i = 0; i < ca.length; i++) {
-                var c = ca[i];
-                while (c.charAt(0) == ' ') c = c.substring(1);
-                if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
-            }
-            return "";
+            return this.cookiesService.get(cookieName);
         }
     }
 

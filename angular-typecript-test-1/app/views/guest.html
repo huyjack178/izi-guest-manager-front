@@ -5,16 +5,17 @@
     <meta charset="utf-8" />
 </head>
 <body>
+
      <h4 class="indigo-text darken-3">Guest Management</h4>
     <div class="row">
         <div class="col s5">
-            <input type="text" name="params" value="text" ng-model="params" placeholder="Search by Name or Email" />
+            <input type="text" name="params" value="text" ng-model="params" placeholder="Search by Name, Email, Phone or Address" />
         </div>
         <a class="modal-trigger btn-floating btn-large waves-effect waves-light teal darken-2 right" href="#add-modal"><i class="material-icons">add</i></a>
     </div>
     <div class="main-content">
         <div class="table-wrap">
-            <table ng-init="guestCtrl.initialize()" class="main-table striped z-depth-1">
+            <table ng-init="guestCtrl.initialize()" class="main-table striped z-depth-3">
                 <thead>
                     <tr>
                         <th data-field="number" width="5%">#</th>
@@ -162,20 +163,7 @@
         </div>
     </div>
 
-    <!-- Preloader -->
-    <div class="preloader">
-        <div class="preloader-wrapper big active">
-            <div class="spinner-layer spinner-red-only">
-                <div class="circle-clipper left">
-                    <div class="circle"></div>
-                </div><div class="gap-patch">
-                    <div class="circle"></div>
-                </div><div class="circle-clipper right">
-                    <div class="circle"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+ 
 
 
 </body>

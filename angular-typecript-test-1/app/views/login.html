@@ -2,14 +2,18 @@
 <html ng-app="Application">
 <head>
     <title></title>
-	<meta charset="utf-8" />
     <meta charset="utf-8" />
- 
+    <meta charset="utf-8" />
+
 </head>
 <body>
-    <input type="text" name="params" value="username" ng-model="username" placeholder="Username"/>
-    <input type="password" name="params" value="password" ng-model="password" placeholder="Password" />
-    <button class="btn-flat indigo white-text" ng-click="authCtrl.login(username, password)">Login</button>
+    <div style="position: absolute; left:35%; top: 20%; padding: 3%" class="col s4  z-depth-4 blue darken-4 white-text">
+        <div><img src="../../Content/img/izi-logo.png" class="responsive-img" /></div>
+        <input type="text" name="params" value="username" ng-model="username" placeholder="Username" />
+        <input type="password" name="params" value="password" ng-model="password" placeholder="Password" />
+        <div>
+            <button class="btn-flat deep-orange darken-3 white-text full-width" ng-click="authCtrl.login(username, password)">Login</button>
+        </div>
+    </div>
 </body>
-
 </html>

@@ -8,84 +8,47 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="navbar-fixed">
-            <nav>
-                <div class="nav-wrapper fixed deep-orange darken-4 ">
-                    <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li> <a href="#/logout"><span class="userName"></span>Logout</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-        <ul class="side-nav fixed">
-            <li class="indigo darken-4"><a><img src="" class="responsive-img" /></a></li>
-            <li>
-                <a href="#/guest" class="bold">
-                    <i class="small material-icons" style="vertical-align:middle">person_pin</i> Guest
-                </a>
-            </li>
-            <li>
-                <a href="#!" class="bold">
-                    <i class="small material-icons" style="vertical-align:middle">language</i> Event
-                </a>
-            </li>
-        </ul>
-    </header>
-
+    <div ui-view="header"></div>
     <main>
         <div class="container" style="width: 90%">
             <div class="row">
                 <div class="col s2"></div>
                 <div class="col s10 right">
-                    <div ng-view=""></div>
+                    <div ui-view="container"></div>
                 </div>
             </div>
         </div>
     </main>
 
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-red-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                    <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="scripts/jquery-2.2.0.js"></script>
     <script src="scripts/materialize/materialize.js"></script>
 
     <script src="scripts/angular.js"></script>
-    <script src="scripts/angular-cookies.js"></script>
     <script src="scripts/angular-route.js"></script>
+    <script src="scripts/angular-ui-router.js"></script>
+    <script src="scripts/angular-cookies.js"></script>
 
     <script src="app/app.run.js"></script>
     <script src="app/app.routes.js"></script>
     <script src="app/app.module.js"></script>
 
+    <script src="app/constants/Constants.js"></script>
     <script src="app/services/Services.js"></script>
     <script src="app/controllers/Controllers.js"></script>
-    <script>
-        function showHeader(isShow) {
-            if (isShow)
-                jQuery("header").show()
-            else
-                jQuery("header").hide();
-        }
-    </script>
-    <!--<script>
-        function getCookie(cookieName) {
-            var name = cookieName + "=";
-            var ca = document.cookie.split(';');
-            for (var i = 0; i < ca.length; i++) {
-                var c = ca[i];
-                while (c.charAt(0) == ' ') c = c.substring(1);
-                if (c.indexOf(name) == 0)
-                    return c.substring(name.length, c.length);
-            }
-
-            return "";
-        }
-        
-        if (getCookie("member") != "") {
-            jQuery(".userName").text("admin");
-        } else {
-            jQuery(".userName").text("");
-        }
-
-        
-    </script>-->
 </body>
 </html>

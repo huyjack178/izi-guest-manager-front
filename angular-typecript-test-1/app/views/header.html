@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <header>
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper fixed deep-orange darken-3 ">
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li>
+                            <a class='dropdown-button' data-beloworigin="true" data-activates="dropdown1">
+                                Welcome, 
+                                {{authCtrl.getUserName()}}
+                            </a>
+                            <ul id='dropdown1' class='dropdown-content'>
+                                <li><a ng-click="authCtrl.logout()" class="dropdown-item">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <ul class="side-nav fixed">
+            <li class="blue darken-4"><a><img src="../../Content/img/izi-logo.png" class="responsive-img" /></a></li>
+            <li>
+                <a href="#/guest" class="bold">
+                    <i class="small material-icons" style="vertical-align:middle">person_pin</i> Guest
+                </a>
+            </li>
+            <li>
+                <a href="#!" class="bold">
+                    <i class="small material-icons" style="vertical-align:middle">language</i> Event
+                </a>
+            </li>
+        </ul>
+    </header>
+    <script src="scripts/materialize/materialize.js"></script>
+</body>
+</html>

@@ -3,7 +3,7 @@ var Application;
     var Services;
     (function (Services) {
         var AuthService = (function () {
-            function AuthService($http) {
+            function AuthService($http, $cookies) {
                 var _this = this;
                 this.serverUrl = "https://izi-manager-server.herokuapp.com/";
                 this.login = function (userName, password) {
@@ -19,29 +19,20 @@ var Application;
                     return result;
                 };
                 this.logout = function () {
-                    document.cookie = null;
+                    _this.cookiesService.remove(Application.Constants.COOKIE_NAME);
                 };
                 this.setCookies = function (cookieName, authData, exdays) {
-                    var date = new Date();
-                    date.setTime(date.getTime() + (exdays * 24 * 60 * 1000));
-                    var expires = "expires=" + date.toUTCString();
-                    document.cookie = cookieName + "=" + authData + ";" + expires;
+                    var d = new Date();
+                    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+                    _this.cookiesService.put(cookieName, authData, { expires: d.toUTCString() });
                 };
                 this.getCookies = function (cookieName) {
-                    var name = cookieName + "=";
-                    var ca = document.cookie.split(';');
-                    for (var i = 0; i < ca.length; i++) {
-                        var c = ca[i];
-                        while (c.charAt(0) == ' ')
-                            c = c.substring(1);
-                        if (c.indexOf(name) == 0)
-                            return c.substring(name.length, c.length);
-                    }
-                    return "";
+                    return _this.cookiesService.get(cookieName);
                 };
                 this.httpService = $http;
+                this.cookiesService = $cookies;
             }
-            AuthService.$inject = ["$http"];
+            AuthService.$inject = ["$http", "$cookies"];
             return AuthService;
         })();
         Services.AuthService = AuthService;

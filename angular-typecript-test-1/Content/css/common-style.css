@@ -16,3 +16,12 @@
     left: 50%;
     top: 40%;
 }
+
+.center-fixed {
+    position: static;
+}
+
+.full-width{ 
+    width: 100%;
+}
+

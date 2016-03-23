@@ -26,7 +26,8 @@ declare namespace angular.route {
     ///////////////////////////////////////////////////////////////////////////
     // RouteService
     // see http://docs.angularjs.org/api/ngRoute.$route
-    // see http://docs.angularjs.org/api/ngRoute.$routeProvider
+    // see http://docs.angularjs.org/api/ngRoute.
+
     ///////////////////////////////////////////////////////////////////////////
     interface IRouteService {
         reload(): void;

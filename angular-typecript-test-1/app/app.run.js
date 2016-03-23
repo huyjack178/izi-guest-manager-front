@@ -3,14 +3,18 @@ var Application;
     var Run = (function () {
         function Run() {
         }
-        Run.run = function ($rootScope, $location, $cookie) {
-            $rootScope.$on('$locationChangeStart', function (event, next, current) {
-                var cookie = $cookie.get("member");
-                if (cookie == null)
+        Run.run = function ($rootScope, $location, $cookies) {
+            $rootScope.$on('$stateChangeStart', function (event, next, current) {
+                var cookie = $cookies.get(Application.Constants.COOKIE_NAME);
+                if (cookie == null) {
                     $location.path('/login');
+                }
+                else {
+                    $location.path('/guest');
+                }
             });
         };
-        Run.$inject = ['$rootScope', '$location', '$cookiesProvider'];
+        Run.$inject = ['$rootScope', '$location', '$cookies'];
         return Run;
     })();
     Application.Run = Run;
