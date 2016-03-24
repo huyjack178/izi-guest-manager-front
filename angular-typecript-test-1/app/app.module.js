@@ -3,3 +3,4 @@
     app.config(Application.Routes.configureRoutes)
         .run(Application.Run.run);
 })();
+//# sourceMappingURL=app.module.js.map
