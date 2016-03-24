@@ -262,7 +262,6 @@ function $RouteProvider() {
     return this;
   };
 
-
   this.$get = ['$rootScope',
                '$location',
                '$routeParams',
@@ -271,7 +270,6 @@ function $RouteProvider() {
                '$templateRequest',
                '$sce',
       function($rootScope, $location, $routeParams, $q, $injector, $templateRequest, $sce) {
-
     /**
      * @ngdoc service
      * @name $route
@@ -654,7 +652,6 @@ function $RouteProvider() {
       }
     }
 
-
     /**
      * @returns {Object} the current active route, by matching it against the URL
      */
@@ -696,7 +693,6 @@ function $RouteProvider() {
 
 ngRouteModule.provider('$routeParams', $RouteParamsProvider);
 
-
 /**
  * @ngdoc service
  * @name $routeParams
@@ -736,7 +732,6 @@ function $RouteParamsProvider() {
 
 ngRouteModule.directive('ngView', ngViewFactory);
 ngRouteModule.directive('ngView', ngViewFillContentFactory);
-
 
 /**
  * @ngdoc directive
@@ -904,7 +899,6 @@ ngRouteModule.directive('ngView', ngViewFillContentFactory);
     </example>
  */
 
-
 /**
  * @ngdoc event
  * @name ngView#$viewContentLoaded
@@ -1017,6 +1011,4 @@ function ngViewFillContentFactory($compile, $controller, $route) {
     }
   };
 }
-
-
 })(window, window.angular);

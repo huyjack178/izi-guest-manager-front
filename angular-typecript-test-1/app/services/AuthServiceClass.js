@@ -1,0 +1,46 @@
+var AuthServiceModule;
+(function (AuthServiceModule) {
+    var AuthServiceClass = (function () {
+        function AuthServiceClass($http, $cookies) {
+            var _this = this;
+            this.serverUrl = "https://izi-manager-server.herokuapp.com/";
+            this.login = function (userName, password) {
+                var authData = btoa(userName + ':' + password);
+                var config = {
+                    headers: {
+                        "Authorization": "Basic " + authData
+                    }
+                };
+                var result = _this.httpService.post(_this.serverUrl + "member/login", null, config)
+                    .then(function (response) { return response; });
+                console.log(result);
+                return result;
+            };
+            this.logout = function () {
+                _this.cookiesService.remove(Application.Constants.COOKIE_NAME);
+            };
+            this.setCookies = function (cookieName, authData, exdays) {
+                var d = new Date();
+                d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+                _this.cookiesService.put(cookieName, authData, { expires: d.toUTCString() });
+            };
+            this.getCookies = function (cookieName) {
+                return _this.cookiesService.get(cookieName);
+            };
+            this.getAuthDataConfig = function () {
+                var authData = _this.getCookies(Application.Constants.COOKIE_NAME);
+                var config = {
+                    headers: {
+                        "Authorization": authData
+                    }
+                };
+                return config;
+            };
+            this.httpService = $http;
+            this.cookiesService = $cookies;
+        }
+        AuthServiceClass.$inject = ["$http", "$cookies"];
+        return AuthServiceClass;
+    })();
+    AuthServiceModule.AuthServiceClass = AuthServiceClass;
+})(AuthServiceModule || (AuthServiceModule = {}));

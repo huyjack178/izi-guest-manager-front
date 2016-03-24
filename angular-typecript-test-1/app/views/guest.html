@@ -5,13 +5,12 @@
     <meta charset="utf-8" />
 </head>
 <body>
-
-     <h4 class="indigo-text darken-3">Guest Management</h4>
+    <h4 class="indigo-text darken-3">Guest</h4>
     <div class="row">
         <div class="col s5">
             <input type="text" name="params" value="text" ng-model="params" placeholder="Search by Name, Email, Phone or Address" />
         </div>
-        <a class="modal-trigger btn-floating btn-large waves-effect waves-light teal darken-2 right" href="#add-modal"><i class="material-icons">add</i></a>
+        <a class="modal-trigger btn-floating btn-large waves-effect waves-light teal darken-1 right" href="#add-modal"><i class="material-icons">add</i></a>
     </div>
     <div class="main-content">
         <div class="table-wrap">
@@ -36,7 +35,7 @@
                         <td>{{guest.address}}</td>
                         <td>{{guest.hometown}}</td>
                         <td>
-                            <span><a class="modal-trigger btn-floating blue-grey" href="#edit-modal" ng-click="guestCtrl.openEditModalOf($index, guest)"><i class="material-icons">input</i></a></span>
+                            <span><a class="modal-trigger btn-floating blue-grey" href="#edit-modal" ng-click="guestCtrl.openEditModalOf($index, guest)"><i class="material-icons">mode_edit</i></a></span>
                             <!--<span><a class="btn-floating teal"><i class="material-icons">perm_identity</i></a></span>-->
                             <span><a class="modal-trigger btn-floating red" href="#delete-modal" ng-click="guestCtrl.openDelModalOf($index)"><i class="material-icons">delete</i></a></span>
                         </td>
@@ -49,7 +48,7 @@
     <!-- Modal Structure -->
     <div id="add-modal" class="modal">
         <div class="modal-content">
-            <h4 class="deep-orange-text darken-4 bold center">Create New Guest</h4>
+            <h4 class="teal-text darken-4 bold center">Create New Guest</h4>
             <div class="divider"></div>
             <div class="row">
                 <form class="col s12">
@@ -70,7 +69,6 @@
                             <i class="material-icons prefix">email</i>
                             <input id="email" type="email" class="validate" ng-model="newGuest.email">
                             <label for="email" data-error="Invalid">Email</label>
-
                         </div>
                         <div class="input-field col s4">
                             <i class="material-icons prefix">room</i>
@@ -98,7 +96,7 @@
 
     <div id="edit-modal" class="modal">
         <div class="modal-content">
-            <h4 class="deep-orange-text darken-4 bold center">Edit Guest</h4>
+            <h4 class="teal-text darken-4 bold center">Edit Guest</h4>
             <div class="divider"></div>
             <div class="row">
                 <form class="col s12">
@@ -146,7 +144,7 @@
 
     <div id="delete-modal" class="modal">
         <div class="modal-content">
-            <h4 class="deep-orange-text darken-4 bold center">Delete Guest</h4>
+            <h4 class="teal-text darken-4 bold center">Delete Guest</h4>
             <div class="divider"></div>
             <p>
                 Please enter guest's id <b class="bold">
@@ -157,15 +155,12 @@
         </div>
         <div class="modal-footer  teal darken-2">
             <button class="modal-action modal-close btn waves-effect waves-light indigo darken-3" style="margin: 5px" ng-click="guestCtrl.deleteGuest(delModalGuestIdConfirm)">
-                <i class="material-icons right">send</i>Add
+                <i class="material-icons right">send</i>OK
             </button>
-            <a class="modal-action modal-close waves-effect waves-light btn deep-orange darken-4" style="margin: 5px">Cancle</a>
+            <a class="modal-action modal-close waves-effect waves-light btn deep-orange darken-4" style="margin: 5px">
+                <i class="material-icons right">clear</i>Cancle
+            </a>
         </div>
     </div>
-
- 
-
-
 </body>
-
 </html>

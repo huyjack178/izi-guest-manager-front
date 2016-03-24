@@ -7,7 +7,7 @@
             //    controller: "Application.Controllers.GuestController",
             //    templateUrl: "app/views/guest.html",
             //    controllerAs: "guestCtrl"
-            //}).when("/login",{ 
+            //}).when("/login",{
             //    controller: "Application.Controllers.AuthController",
             //    templateUrl: "app/views/login.html",
             //    controllerAs: "authCtrl"
@@ -35,6 +35,15 @@
                         controller: "Application.Controllers.GuestController",
                         templateUrl: "app/views/guest.html",
                         controllerAs: "guestCtrl"
+                    }
+                }
+            }).state('root.account', {
+                url: '/account',
+                views: {
+                    'container@': {
+                        controller: "Application.Controllers.AccountController",
+                        templateUrl: "app/views/account.html",
+                        controllerAs: "accountCtrl"
                     }
                 }
             }).state('login', {

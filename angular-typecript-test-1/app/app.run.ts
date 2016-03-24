@@ -10,7 +10,7 @@
                     $location.path('/login');
                 }
                 else {
-                    $location.path('/guest');
+                    //$location.path('/guest');
                 }
             })
         }

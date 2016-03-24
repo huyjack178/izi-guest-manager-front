@@ -2,66 +2,46 @@ var Application;
 (function (Application) {
     var Services;
     (function (Services) {
-        var AuthService = (function () {
-            function AuthService($http) {
-                var _this = this;
-                this.serverUrl = "https://izi-manager-server.herokuapp.com/";
-                this.localUrl = "http://localhost:8001/";
-                this.login = function (userName, password) {
-                    var authdata = jQuery.base64.encode(userName + ':' + password);
-                    _this.httpService.defaults.headers.common['Authorization'] = 'Basic' + authdata;
-                    var result = _this.httpService.post(_this.serverUrl + "member/login", null)
-                        .then(function (response) { return response; });
-                    console.log(result);
-                    return result;
-                };
-                this.httpService = $http;
-            }
-            AuthService.$inject = ["$http"];
-            return AuthService;
-        })();
-        Services.AuthService = AuthService;
         var GuestService = (function () {
-            function GuestService($http) {
+            function GuestService($http, authService) {
                 var _this = this;
-                this.serverUrl = "https://izi-manager-server.herokuapp.com/";
-                this.localUrl = "http://localhost:8001/";
                 this.getUser = function () {
-                    var result = _this.httpService.get(_this.serverUrl + "guests")
+                    var result = _this.httpService.get(Application.Configs.ServerConfig.ServerUrl + "guests", _this.authService.getAuthDataConfig())
                         .then(function (response) { return response.data; })
                         .catch(function (error) { return error; });
                     console.log(result);
                     return result;
                 };
                 this.addUser = function (user) {
-                    var result = _this.httpService.post(_this.serverUrl + "guests", user)
+                    var result = _this.httpService.post(Application.Configs.ServerConfig.ServerUrl + "guests", user, _this.authService.getAuthDataConfig())
                         .then(function (response) { return (response); })
                         .catch(function (error) { return error; });
                     console.log(result);
                     return result;
                 };
                 this.updateUser = function (user) {
-                    var result = _this.httpService.put(_this.serverUrl + "guest" + "/" + user.id, user)
+                    var result = _this.httpService.put(Application.Configs.ServerConfig.ServerUrl + "guest" + "/" + user.id, user, _this.authService.getAuthDataConfig())
                         .then(function (response) { return (response); })
                         .catch(function (error) { return error; });
                     console.log(result);
                     return result;
                 };
                 this.deleteUser = function (id) {
-                    var result = _this.httpService.delete(_this.serverUrl + "guest" + "/" + id)
+                    var result = _this.httpService.delete(Application.Configs.ServerConfig.ServerUrl + "guest" + "/" + id, _this.authService.getAuthDataConfig())
                         .then(function (response) { return (response); })
                         .catch(function (error) { return error; });
                     console.log(result);
                     return result;
                 };
                 this.httpService = $http;
+                this.authService = authService;
             }
-            GuestService.$inject = ["$http"];
+            GuestService.$inject = ["$http", "Application.Services.AuthService"];
             return GuestService;
         })();
         Services.GuestService = GuestService;
         angular.module("Application")
-            .service("Application.Services.GuestService", GuestService)
-            .service("Application.Services.AuthService", AuthService);
+            .service("Application.Services.GuestService", GuestService);
     })(Services = Application.Services || (Application.Services = {}));
 })(Application || (Application = {}));
+//# sourceMappingURL=GuestService.js.map

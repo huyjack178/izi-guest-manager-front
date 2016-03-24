@@ -20,7 +20,6 @@
  * See {@link ngCookies.$cookies `$cookies`} for usage.
  */
 
-
 angular.module('ngCookies', ['ng']).
   /**
    * @ngdoc provider
@@ -213,7 +212,6 @@ angular.module('ngCookies').
  * ```
  */
  factory('$cookieStore', ['$cookies', function($cookies) {
-
     return {
       /**
        * @ngdoc method
@@ -256,7 +254,6 @@ angular.module('ngCookies').
         $cookies.remove(key);
       }
     };
-
   }]);
 
 /**
@@ -317,6 +314,4 @@ $$CookieWriter.$inject = ['$document', '$log', '$browser'];
 angular.module('ngCookies').provider('$$cookieWriter', function $$CookieWriterProvider() {
   this.$get = $$CookieWriter;
 });
-
-
 })(window, window.angular);

@@ -10,7 +10,6 @@ var Application;
                     $location.path('/login');
                 }
                 else {
-                    $location.path('/guest');
                 }
             });
         };

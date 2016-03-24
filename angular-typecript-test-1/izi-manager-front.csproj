@@ -98,6 +98,7 @@
   <ItemGroup>
     <Content Include="app\views\header.html" />
     <Content Include="app\views\login.html" />
+    <Content Include="app\views\account.html" />
     <Content Include="Content\css\common-style.css" />
     <Content Include="Content\img\izi-logo.png" />
     <Content Include="Content\img\preloader.gif" />
@@ -937,11 +938,20 @@
   <ItemGroup>
     <TypeScriptCompile Include="app\app.module.ts" />
     <TypeScriptCompile Include="app\app.run.ts" />
+    <TypeScriptCompile Include="app\config\Configs.ts" />
     <TypeScriptCompile Include="app\constants\Constants.ts" />
-    <TypeScriptCompile Include="app\controllers\Controllers.ts" />
-    <TypeScriptCompile Include="app\interfaces\Interfaces.ts" />
+    <TypeScriptCompile Include="app\controllers\AccountController.ts" />
+    <TypeScriptCompile Include="app\controllers\AuthController.ts" />
+    <TypeScriptCompile Include="app\controllers\CommonController.ts" />
+    <TypeScriptCompile Include="app\controllers\GuestController.ts" />
+    <TypeScriptCompile Include="app\interfaces\IAuthService.ts" />
     <TypeScriptCompile Include="app\app.routes.ts" />
-    <TypeScriptCompile Include="app\services\Services.ts" />
+    <TypeScriptCompile Include="app\interfaces\IAccountService.ts" />
+    <TypeScriptCompile Include="app\interfaces\IUserService.ts" />
+    <TypeScriptCompile Include="app\services\AccountService.ts" />
+    <TypeScriptCompile Include="app\services\AuthService.ts" />
+    <TypeScriptCompile Include="app\services\CommonService.ts" />
+    <TypeScriptCompile Include="app\services\GuestService.ts" />
     <TypeScriptCompile Include="scripts\typings\angular-ui-router\angular-ui-router.d.ts" />
     <TypeScriptCompile Include="scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="scripts\typings\angularjs\angular-component-router.d.ts" />

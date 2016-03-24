@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h4 class="indigo-text darken-4 bold">Account</h4>
+    <div class="row">
+        <div class="col s5">
+            <input type="text" name="params" value="text" ng-model="params" placeholder="Search by user name" />
+        </div>
+        <a class="modal-trigger btn-floating btn-large waves-effect waves-light teal darken-1 right" href="#add-modal"><i class="material-icons">add</i></a>
+    </div>
+    <div class="main-content">
+        <div class="table-wrap">
+            <table ng-init="accountCtrl.initialize()" class="main-table striped z-depth-3">
+                <thead>
+                    <tr>
+                        <th data-field="id" width="5%">#</th>
+                        <th data-field="userName" width="30%">UserName</th>
+                        <th data-field="password" width="30%">Password</th>
+                        <th data-field="role" width="10%">Role</th>
+                        <th width="25%">Operation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="account in accountCtrl._accounts| filter: params" ng-init="$last && accountCtrl.initModals()">
+                        <td>{{$index + 1}}</td>
+                        <td>{{account.username}}</td>
+                        <td>{{account.password}}</td>
+                        <td>{{account.role}}</td>
+                        <td>
+                            <span><a class="modal-trigger btn-floating blue-grey" href="#edit-modal" ng-click="accountCtrl.openEditModalOf($index, guest)"><i class="material-icons">mode_edit</i></a></span>
+                            <!--<span><a class="btn-floating teal"><i class="material-icons">perm_identity</i></a></span>-->
+                            <span><a class="modal-trigger btn-floating red" href="#delete-modal" ng-click="accountCtrl.openDelModalOf($index)"><i class="material-icons">delete</i></a></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!--Modal-->
+    <div id="add-modal" class="modal">
+        <div class="modal-content">
+            <h4 class="teal-text darken-4 bold center">Create New Account</h4>
+            <div class="divider"></div>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input id="username" type="text" class="validate" ng-model="newAccount.username">
+                            <label for="username">User name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">lock</i>
+                            <input id="password" type="password" class="validate" ng-model="newAccount.password">
+                            <label for="password" data-error="Invalid">Password</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                          
+                            <span>
+                                <i class="material-icons prefix">verified_user</i>
+                                <input class="with-gap" name="role" type="radio" id="member" checked ng-model="newAccount.role" value="member" />
+                                <label for="member">Member</label>
+                            </span>
+                            <span>
+                                <input class="with-gap" name="role" type="radio" id="leader" ng-model="newAccount.role" value="leader" />
+                                <label for="leader">Leader</label>
+                            </span>
+                            <span>
+                                <input class="with-gap" name="role" type="radio" id="super" ng-model="newAccount.role" value="supervisor" />
+                                <label for="super">Supervisor</label>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="modal-footer  teal darken-2">
+            <button class="modal-action modal-close btn waves-effect waves-light indigo darken-3" style="margin: 5px" ng-click="accountCtrl.addAccount(newAccount)">
+                <i class="material-icons right">send</i>Add
+            </button>
+            <a class="modal-action modal-close waves-effect waves-light btn deep-orange darken-4" style="margin: 5px">Cancle</a>
+        </div>
+    </div>
+
+    <div id="delete-modal" class="modal">
+        <div class="modal-content">
+            <h4 class="teal-text darken-4 bold center">Delete Guest</h4>
+            <div class="divider"></div>
+            <p>
+                Please enter account's user name <b class="bold">
+                    ({{accountCtrl.getCurrentUserName()}})
+                </b>to confirm you want to permanently delete it:
+            </p>
+            <input type="text" name="params" value="text" ng-model="delUserNameConfirm" class="deleteId" />
+        </div>
+        <div class="modal-footer  teal darken-2">
+            <button class="modal-action modal-close btn waves-effect waves-light indigo darken-3" style="margin: 5px" ng-click="accountCtrl.deleteAccount(delUserNameConfirm)">
+                <i class="material-icons right">send</i>OK
+            </button>
+            <a class="modal-action modal-close waves-effect waves-light btn deep-orange darken-4" style="margin: 5px">Cancle</a>
+        </div>
+    </div>
+</body>
+</html>
